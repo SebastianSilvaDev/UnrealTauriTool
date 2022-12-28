@@ -22,7 +22,9 @@ export class SettingsViewComponent implements OnInit {
     });
 
     if (select) {
-      console.log(select);
+      this.UnrealDir = select.toString();
     }
   }
+
+  UnrealDir: string = "";
 }

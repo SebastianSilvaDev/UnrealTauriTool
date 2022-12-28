@@ -1,8 +1,20 @@
 <app-nav-bar></app-nav-bar>
 <mat-grid-list cols="2">
     <mat-grid-tile>
-        <button mat-raised-button (click)="getUnrealDir()">
-            Select Unreal Folder
-        </button>
+        <mat-card>
+            <mat-card-content>
+                <mat-form-field>
+                    <mat-label>
+                        Unreal Directory
+                    </mat-label>
+                    <input matInput disabled [value]="UnrealDir"/>
+                </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button (click)="getUnrealDir()">
+                    Select Unreal Folder
+                </button>
+            </mat-card-actions>
+        </mat-card>
     </mat-grid-tile>
 </mat-grid-list>
