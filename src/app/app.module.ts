@@ -7,12 +7,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SettingsViewComponent } from './views/settings-view/settings-view.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { BuildViewComponent } from './views/build-view/build-view.component';
+import { ServerTestViewComponent } from './views/server-test-view/server-test-view.component';
 
 
 
@@ -21,7 +23,8 @@ import { BuildViewComponent } from './views/build-view/build-view.component';
     AppComponent,
     NavBarComponent,
     SettingsViewComponent,
-    BuildViewComponent
+    BuildViewComponent,
+    ServerTestViewComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { BuildViewComponent } from './views/build-view/build-view.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCheckboxModule,
     AppRoutingModule
   ],
   bootstrap: [
