@@ -1,20 +1,22 @@
 <app-nav-bar></app-nav-bar>
 <br/>
-<mat-card class="full-width">
-    <mat-card-content>
-        <mat-form-field class="full-width">
-            <mat-label>
-                Unreal Directory
-            </mat-label>
-            <input matInput disabled [value]="UnrealDir" />
-        </mat-form-field>
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-raised-button (click)="getUnrealDir()">
-            Select New Unreal Folder
-        </button>
-        <button mat-raised-button color="primary">
-            Verify Version
-        </button>
-    </mat-card-actions>
-</mat-card>
+<div class="container" down center>
+    <mat-card class="full-width">
+        <mat-card-content>
+            <mat-form-field class="full-width">
+                <mat-label>
+                    Unreal Directory
+                </mat-label>
+                <input matInput disabled [value]="UnrealDir" />
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button (click)="getUnrealDir()">
+                Select New Unreal Folder
+            </button>
+            <button mat-raised-button color="primary">
+                Verify Version
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>
