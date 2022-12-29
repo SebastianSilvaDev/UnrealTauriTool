@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,6 +11,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SettingsViewComponent } from './views/settings-view/settings-view.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { BuildViewComponent } from './views/build-view/build-view.component';
 
 
 
@@ -19,7 +20,8 @@ import { SettingsViewComponent } from './views/settings-view/settings-view.compo
   declarations: [
     AppComponent,
     NavBarComponent,
-    SettingsViewComponent
+    SettingsViewComponent,
+    BuildViewComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { SettingsViewComponent } from './views/settings-view/settings-view.compo
     MatGridListModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    AppRoutingModule
   ],
   bootstrap: [
     AppComponent

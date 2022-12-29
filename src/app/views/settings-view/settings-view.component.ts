@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { open } from '@tauri-apps/api/dialog';
-import { appDataDir } from '@tauri-apps/api/path'
+import { UnrealVersionService } from 'src/app/services/unreal-version.service';
 
 @Component({
   selector: 'app-settings-view',
@@ -9,21 +8,17 @@ import { appDataDir } from '@tauri-apps/api/path'
 })
 export class SettingsViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private unrealVersionService: UnrealVersionService
+  ) { }
 
   ngOnInit(): void {
+    this.UnrealDir = this.unrealVersionService.getCurrentUnrealVersionDirectory();
   }
 
   async getUnrealDir() {
-    const select = await open({
-      directory: true,
-      multiple: false,
-      defaultPath: await appDataDir()
-    });
-
-    if (select) {
-      this.UnrealDir = select.toString();
-    }
+    this.unrealVersionService.setCurrentUnrealVersionDirectory(await this.unrealVersionService.selectUnrealDirectory());
+    this.UnrealDir = this.unrealVersionService.getCurrentUnrealVersionDirectory();
   }
 
   UnrealDir: string = "";
