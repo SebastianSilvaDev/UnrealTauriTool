@@ -21,5 +21,13 @@ export class SettingsViewComponent implements OnInit {
     this.UnrealDir = this.unrealVersionService.getCurrentUnrealVersionDirectory();
   }
 
+  async verifyUnrealDir() {
+    let isValidDirectoryForUnreal: boolean = await this.unrealVersionService.verifyUnrealDirectory(this.UnrealDir);
+    if (isValidDirectoryForUnreal) {
+      return console.log("Valid Location");
+    }
+    console.error("No Valid Directory for Unreal Engine")
+  }
+
   UnrealDir: string = "";
 }

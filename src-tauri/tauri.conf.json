@@ -26,17 +26,17 @@
         "save": false
       },
       "fs": {
-        "all": false,
+        "all": true,
         "copyFile": false,
         "createDir": false,
-        "exists": false,
+        "exists": true,
         "readDir": true,
-        "readFile": false,
+        "readFile": true,
         "removeDir": false,
         "removeFile": false,
         "renameFile": false,
-        "scope": [],
-        "writeFile": false
+        "writeFile": false,
+        "scope": ["**"]
       },
       "path": {
         "all": true

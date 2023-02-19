@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { open } from '@tauri-apps/api/dialog';
 import { appDataDir } from '@tauri-apps/api/path'
+import { exists } from '@tauri-apps/api/fs';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,10 @@ export class UnrealVersionService {
       return select.toString();
     }
     return "";
+  }
+
+  async verifyUnrealDirectory(directory: String): Promise<boolean> {
+    return await exists(directory + "\\Engine\\Binaries\\Win64\\");
   }
 
 }
