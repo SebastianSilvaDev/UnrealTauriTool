@@ -10,11 +10,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SettingsViewComponent } from './views/settings-view/settings-view.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { BuildViewComponent } from './views/build-view/build-view.component';
 import { ServerTestViewComponent } from './views/server-test-view/server-test-view.component';
+import { MessageDialogComponent } from './dialogs/message-dialog/message-dialog.component';
 
 
 
@@ -24,7 +26,8 @@ import { ServerTestViewComponent } from './views/server-test-view/server-test-vi
     NavBarComponent,
     SettingsViewComponent,
     BuildViewComponent,
-    ServerTestViewComponent
+    ServerTestViewComponent,
+    MessageDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { ServerTestViewComponent } from './views/server-test-view/server-test-vi
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule
   ],
   bootstrap: [
     AppComponent

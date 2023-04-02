@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MessageDialogComponent } from 'src/app/dialogs/message-dialog/message-dialog.component';
 import { UnrealVersionService } from 'src/app/services/unreal-version.service';
 
 @Component({
@@ -9,7 +11,8 @@ import { UnrealVersionService } from 'src/app/services/unreal-version.service';
 export class SettingsViewComponent implements OnInit {
 
   constructor(
-    private unrealVersionService: UnrealVersionService
+    private unrealVersionService: UnrealVersionService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -24,9 +27,10 @@ export class SettingsViewComponent implements OnInit {
   async verifyUnrealDir() {
     let isValidDirectoryForUnreal: boolean = await this.unrealVersionService.verifyUnrealDirectory(this.UnrealDir);
     if (isValidDirectoryForUnreal) {
-      return console.log("Valid Location");
+      this.dialog.open(MessageDialogComponent, { data: {title: "Unreal Path is Valid", message: "Congratulations! the path you submited is working fine"}});
+      return;
     }
-    console.error("No Valid Directory for Unreal Engine")
+    let newDialog = this.dialog.open(MessageDialogComponent, { data: {title: "Failed to Verify", message: "No Valid Directory for Unreal Engine"}});
   }
 
   UnrealDir: string = "";
